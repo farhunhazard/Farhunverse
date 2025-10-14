@@ -65,16 +65,6 @@
 
 ---
 
-## 📸 Preview
-
-| Hero Section | Tech Showcase | Beyond the Code |
-|:-------------:|:-------------:|:---------------:|
-| ![Hero](assets/screenshots/hero.png) | ![Projects](assets/screenshots/tech_showcase.png) | ![Beyond](assets/screenshots/beyond_code.png) |
-
-> *(Screenshots are optional — you can replace them with actual ones from your app.)*
-
----
-
 ## 🧭 How to Run Locally
 
 ```bash
