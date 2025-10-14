@@ -1003,6 +1003,7 @@ elif menu == "📝 AI Resume Navigator":
     from langchain.text_splitter import RecursiveCharacterTextSplitter
     from langchain_community.vectorstores import FAISS
     from langchain_openai import OpenAIEmbeddings
+    from openai import OpenAI  # 👈 added this line
     from langchain.chains import ConversationalRetrievalChain
     from langchain.memory import ConversationBufferMemory
     from langchain_openai import ChatOpenAI
@@ -1037,7 +1038,11 @@ elif menu == "📝 AI Resume Navigator":
             return None
         splitter = RecursiveCharacterTextSplitter(chunk_size=800, chunk_overlap=200)
         chunks = splitter.split_text(text)
-        embeddings = OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY)
+        client = OpenAI(api_key=OPENAI_API_KEY)
+        embeddings = OpenAIEmbeddings(
+        model="text-embedding-3-large",  # Stable embedding model
+        client=client
+        )
         return FAISS.from_texts(chunks, embeddings)
 
     vectorstore = load_resume_embeddings()
