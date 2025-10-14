@@ -22,7 +22,6 @@ tiktoken==0.7.0
 python-dotenv==1.0.1
 
 # --- Email Handling ---
-smtplib3==0.1.1
 email-validator==2.2.0
 
 # --- Optional (Improves caching and performance) ---
