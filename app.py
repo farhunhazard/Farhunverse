@@ -1038,11 +1038,10 @@ elif menu == "📝 AI Resume Navigator":
             return None
         splitter = RecursiveCharacterTextSplitter(chunk_size=800, chunk_overlap=200)
         chunks = splitter.split_text(text)
-        client = OpenAI(api_key=OPENAI_API_KEY)
         embeddings = OpenAIEmbeddings(
-        model="text-embedding-3-large",  # Stable embedding model
-        client=client
-        )
+        model="text-embedding-3-large",
+         api_key=OPENAI_API_KEY
+         )
         return FAISS.from_texts(chunks, embeddings)
 
     vectorstore = load_resume_embeddings()
